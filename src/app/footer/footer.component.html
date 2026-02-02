@@ -1,0 +1,298 @@
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>À propos</h3>
+      <p>Votre entreprise ou description ici. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Liens rapides</h3>
+      <ul>
+        <li><a routerLink="/">Accueil</a></li>
+        <li><a routerLink="/about">À propos</a></li>
+        <li><a routerLink="/services">Services</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+        <li><a routerLink="/privacy">Politique de confidentialité</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <ul class="contact-info">
+        <li><i class="icon-phone"></i> +33 1 23 45 67 89</li>
+        <li><i class="icon-email"></i> contact&#64;gmail.com</li>
+        <li><i class="icon-location"></i> 123 Rue Exemple, Paris</li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Suivez-nous</h3>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="icon-facebook"></i></a>
+        <a href="#" aria-label="Twitter"><i class="icon-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="icon-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="icon-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; {{ currentYear }} Mon Application. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<style>
+/* ===== STYLES GÉNÉRAUX DU FOOTER ===== */
+.footer {
+  background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+  color: #ecf0f1;
+  padding: 50px 0 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+  margin-top: auto;
+}
+
+/* ===== CONTENU PRINCIPAL ===== */
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 992px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== SECTIONS ===== */
+.footer-section {
+  margin-bottom: 30px;
+}
+
+.footer-section h3 {
+  color: #3498db;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.footer-section h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 2px;
+  background: #3498db;
+}
+
+.footer-section p {
+  line-height: 1.7;
+  color: #bdc3c7;
+  font-size: 0.95rem;
+}
+
+/* ===== LISTES ===== */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+  color: #ecf0f1;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.footer-section ul li a:hover {
+  color: #3498db;
+  transform: translateX(5px);
+}
+
+.footer-section ul li a::before {
+  content: '›';
+  margin-right: 8px;
+  color: #3498db;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.footer-section ul li a:hover::before {
+  opacity: 1;
+}
+
+/* ===== INFORMATIONS DE CONTACT ===== */
+.contact-info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 15px;
+  color: #bdc3c7;
+  line-height: 1.5;
+}
+
+.contact-info i {
+  color: #3498db;
+  font-size: 1.1rem;
+  min-width: 20px;
+  text-align: center;
+  margin-top: 2px;
+}
+
+/* Icônes Unicode */
+.icon-phone::before { content: "📞"; }
+.icon-email::before { content: "✉️"; }
+.icon-location::before { content: "📍"; }
+
+/* ===== LIENS SOCIAUX ===== */
+.social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.social-links a:hover {
+  background: #3498db;
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+/* Icônes sociales Unicode */
+.icon-facebook::before { content: "f"; font-weight: bold; }
+.icon-twitter::before { content: "𝕏"; }
+.icon-instagram::before { content: "📷"; }
+.icon-linkedin::before { content: "in"; font-weight: bold; }
+
+/* ===== BARRE DU BAS ===== */
+.footer-bottom {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+  color: #95a5a6;
+  margin: 0;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer-section {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.footer-section:nth-child(1) { animation-delay: 0.1s; }
+.footer-section:nth-child(2) { animation-delay: 0.2s; }
+.footer-section:nth-child(3) { animation-delay: 0.3s; }
+.footer-section:nth-child(4) { animation-delay: 0.4s; }
+
+/* ===== EFFETS DE SURVOL POUR TOUS LES LIENS ===== */
+.footer a {
+  position: relative;
+  overflow: hidden;
+}
+
+.footer a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #3498db;
+  transition: width 0.3s ease;
+}
+
+.footer a:hover::after {
+  width: 100%;
+}
+
+/* ===== RESPONSIVE AMÉLIORÉ ===== */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 0 0;
+  }
+  
+  .footer-content {
+    gap: 30px;
+    padding: 0 15px;
+  }
+  
+  .footer-section {
+    text-align: center;
+  }
+  
+  .footer-section h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .contact-info li {
+    justify-content: center;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+}
+
+/* ===== ACCESSIBILITÉ ===== */
+.footer a:focus {
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* ===== TRANSITIONS DOUCES ===== */
+.footer * {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+</style>
