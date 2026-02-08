@@ -4,6 +4,6 @@ export class Suggestion {
   description!: string;
   category!: string;
   date!: Date;
-  status!: string;
+  statut!: string;
   nbLikes!: number;
 }
